@@ -1,5 +1,3 @@
-// Testing the new value
-//-----------------------------------------
 require('dotenv').config()
 const mongoose = require('mongoose')
 const express = require('express')
