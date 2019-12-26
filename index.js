@@ -1,0 +1,32 @@
+// Testing the new value
+//-----------------------------------------
+require('dotenv').config()
+const mongoose = require('mongoose')
+const express = require('express')
+const bodyParser = require('body-parser')
+const compression = require('compression')
+const helmet = require('helmet')
+const app = express()
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
+global.__basedir = __dirname
+
+//mongoose.connect(process.env.MONGODB, { useNewUrlParser: true })
+
+app.use(express.static('static'))
+app.use(express.static('dist'))
+app.use('/app', express.static('dist'))
+app.use(express.static('public'))
+app.use('/app', express.static('public'))
+app.use(helmet())
+app.use(helmet.frameguard({action: 'sameorigin' }))
+app.use(helmet.dnsPrefetchControl())
+app.use(helmet.hidePoweredBy())
+app.use(helmet.ieNoOpen())
+app.use(helmet.noSniff())
+app.use(helmet.xssFilter())
+app.use(compression())
+app.use(bodyParser.json({extended: true}))
+app.use(bodyParser.urlencoded({extended: true}))
+require('./routes')(app, io)
+server.listen(process.env.PORT)

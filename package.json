@@ -1,0 +1,48 @@
+{
+  "name": "testbot",
+  "version": "1.0.0",
+  "description": "Test Bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "parcel build ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:citrudev/testbot_project.git"
+  },
+  "keywords": [
+    "voyage",
+    "assured"
+  ],
+  "author": "citrudev",
+  "license": "ISC",
+  "bugs": {
+    "url": "git@github.com:citrudev/testbot_project.git"
+  },
+  "homepage": "git@github.com:citrudev/testbot_project.git",
+  "dependencies": {
+    "airbnbapijs": "^0.10.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.4",
+    "dotenv": "^7.0.0",
+    "email-validator": "^2.0.4",
+    "express": "^4.16.4",
+    "generate-unique-id": "^2.0.0",
+    "helmet": "^3.16.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.4.20",
+    "oenomaus": "^1.0.0",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.5.0",
+    "parcel-bundler": "^1.11.0",
+    "vue-template-compiler": "^2.5.22",
+    "babel-core": "^6.0.20",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15"
+  }
+}
