@@ -12,6 +12,7 @@ process.send({id: id, data: {
 
 
 process.on('message', (task) => {
+
   switch(task.CMD) {
       case 'start':
         process.send({id: id, data: {
@@ -31,6 +32,7 @@ process.on('message', (task) => {
         }})
         break
   }
+  
 })
 
 
@@ -48,10 +50,9 @@ operations.work = function (args) {
             CMD: 'task_status',
             status: 'Task completed',
             action: 'Completed',
-            payload: {error: null, data: dimension}
+            payload: {error: null, data: null}
         }})
-        
-        
+
     } catch (error) {
         console.log(error)
         process.send({id: id, data: {
@@ -61,7 +62,6 @@ operations.work = function (args) {
             payload: {error: error, data: task}
         }})
     }
-   
 })()
 }
 
